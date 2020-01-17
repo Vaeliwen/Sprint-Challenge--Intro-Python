@@ -34,12 +34,11 @@ def cityreader(cities=[]):
         if row[0] == "city":
           pass
         else:
-          cities.append(City(row[0], row[3], row[4]))
+          cities.append(City(row[0], float(row[3]), float(row[4])))
     return cities
 
 cityreader(cities)
 
-print(cities[0].name)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
