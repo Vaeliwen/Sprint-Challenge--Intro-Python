@@ -31,10 +31,15 @@ def cityreader(cities=[]):
     with open("Sprint-Challenge--Intro-Python\src\cityreader\cities.csv") as csvfile:
       csvreader = csv.reader(csvfile, delimiter=',', quotechar='|')
       for row in csvreader:
-        cities.append(City(row[0], row[3], row[4]))
+        if row[0] == "city":
+          pass
+        else:
+          cities.append(City(row[0], row[3], row[4]))
     return cities
 
 cityreader(cities)
+
+print(cities[0].name)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
